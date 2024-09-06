@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { Link } from "expo-router";
 
 import { ThemedView } from "@/components/ThemedView";
 import { ThemedButton } from "@/components/ThemedButton";
@@ -7,11 +8,13 @@ export default function HomeScreen() {
   return (
     <ThemedView style={styles.container}>
       <ThemedView style={styles.buttonContainer}>
-        <ThemedButton
-          type="primary"
-          title="Logga in"
-          onPress={() => alert("Primary Button Pressed")}
-        />
+        <Link href="/authentication/AuthenticationScreen" asChild>
+          <ThemedButton
+            type="primary"
+            title="Logga in"
+            onPress={() => console.log("primary button pressed")}
+          />
+        </Link>
         <ThemedButton
           type="secondary"
           title="Skapa konto"
